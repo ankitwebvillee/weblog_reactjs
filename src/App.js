@@ -4,6 +4,9 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Home from "./views/Home";
 import Contact from "./views/Contact";
 import Category from "./views/Category";
+import SingleBlog from "./views/Single_blog";
+import About from "./views/About";
+import Author from "./views/Author";
 
 const PrivateRoute = ({ component, ...rest }) => {
   const user = window.localStorage.getItem("Authorization");
@@ -82,6 +85,14 @@ class App extends Component {
               {...this.props}
               component={Category}
             />
+            <Route
+              exact
+              path="/single-blog"
+              {...this.props}
+              component={SingleBlog}
+            />
+            <Route exact path="/about" {...this.props} component={About} />
+            <Route exact path="/author" {...this.props} component={Author} />
             {/* <Route {...this.props} component={} /> */}
           </Switch>
         </div>
